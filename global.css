@@ -1,0 +1,29 @@
+/*Toggle Dark mode/ Light mode button*/    
+    /* Default (light mode) styles */
+    body {
+        background-color: white;
+        color: black;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    /* Dark mode styles */
+    body.dark-mode {
+        background-color: #121212;
+        color: white;
+    }
+
+    /* Button styling */
+    #darkModeButton {
+        background-color: #007BFF; /* Blue */
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    #darkModeButton:hover {
+        background-color: #0056b3;
+    }

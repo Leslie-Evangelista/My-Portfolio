@@ -21,3 +21,28 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("currentYear").textContent = currentYear;
 });
 
+// Toggle dark mode/light mode
+document.addEventListener("DOMContentLoaded", () => {
+    const darkModeButton = document.getElementById("darkModeButton");
+
+    // Check for saved user preference in localStorage
+    const currentTheme = localStorage.getItem("theme");
+    if (currentTheme === "dark") {
+        document.body.classList.add("dark-mode");
+        darkModeButton.textContent = "Light Mode";
+    }
+
+    // Toggle dark mode on button click
+    darkModeButton.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+
+        // Save the user's preference to localStorage
+        if (document.body.classList.contains("dark-mode")) {
+            localStorage.setItem("theme", "dark");
+            darkModeButton.textContent = "Light Mode";
+        } else {
+            localStorage.setItem("theme", "light");
+            darkModeButton.textContent = "Dark Mode";
+        }
+    });
+});
