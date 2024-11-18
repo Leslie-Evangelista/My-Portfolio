@@ -46,3 +46,39 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
+// Skillset list using an array
+document.addEventListener("DOMContentLoaded", () => {
+    // Arrays of skills
+    const frontEndSkills = ["HTML5", "JavaScript", "CSS3", "Next.js"];
+    const backEndSkills = ["Python", "C#", "MySQL", "Java"];
+    const developerTools = [
+        "GitHub",
+        "Visual Studio Code",
+        "Visual Studio 2022",
+        "Figma",
+        "Adobe Express",
+        "Adobe Illustrator",
+        "Adobe Photoshop",
+        "Docker"
+    ];
+
+    // Function to generate a list dynamically
+    function generateList(skillArray, elementId) {
+        const listElement = document.getElementById(elementId);
+        skillArray.forEach((skill) => {
+            const listItem = document.createElement("li");
+            listItem.textContent = skill;
+            listElement.appendChild(listItem);
+        });
+    }
+
+    // Generate lists for each category
+    generateList(frontEndSkills, "frontEndSkills");
+    generateList(backEndSkills, "backEndSkills");
+    generateList(developerTools, "developerTools");
+
+    // Add the current year in the footer
+    const currentYear = new Date().getFullYear();
+    document.getElementById("currentYear").textContent = currentYear;
+});
